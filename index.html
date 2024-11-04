@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Copy Code to Pre-Tag</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/styles/default.min.css"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.10.0/highlight.min.js"></script>
     <style>
       body {
         font-family: Arial, sans-serif;
@@ -43,7 +48,9 @@
 
     <script>
       function copyText() {
-        const inputText = document.getElementById("inputText").value;
+        const inputText = hljs.highlightAuto(
+          document.getElementById("inputText").value
+        ).value; // Get the value of the textarea and highlight the code
         const outputPre = document.getElementById("output");
         const lines = inputText
           .split("\n")
