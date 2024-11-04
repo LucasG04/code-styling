@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Copy Code to Pre-Tag</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+      }
+      textarea {
+        width: 100%;
+        height: 200px;
+        margin-bottom: 20px;
+        font-family: monospace;
+        white-space: pre; /* Maintain whitespace */
+      }
+      pre {
+        background-color: #f0f0f0;
+        padding: 10px;
+        border: 1px solid #ccc;
+        overflow: auto; /* Adds scrolling if necessary */
+      }
+      .line {
+        padding: 2px 5px; /* Slight padding for better readability */
+      }
+      .line:nth-child(odd) {
+        background-color: white; /* Background color for odd lines */
+      }
+      .line:nth-child(even) {
+        background-color: #f9f9f9; /* Background color for even lines (very light gray) */
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Copy Code to Pre-Tag</h1>
+    <textarea id="inputText" placeholder="Enter your code here..."></textarea>
+    <button onclick="copyText()">Copy</button>
+
+    <h2>Output:</h2>
+    <pre id="output"></pre>
+
+    <script>
+      function copyText() {
+        const inputText = document.getElementById("inputText").value;
+        const outputPre = document.getElementById("output");
+        const lines = inputText
+          .split("\n")
+          .map((line, index) => {
+            return `<div class="line">${index + 1} ${line}</div>`; // Add line numbers and wrap each line in a div
+          })
+          .join("");
+        outputPre.innerHTML = lines; // Set the innerHTML to display the formatted lines
+      }
+    </script>
+  </body>
+</html>
