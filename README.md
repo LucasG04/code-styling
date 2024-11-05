@@ -11,3 +11,9 @@
 ## Third party deps
 
 - [highlight.js](https://highlightjs.org/) for highlighting the code
+
+## Example
+
+<p align="center">
+  <img src="docs/exampe-word-simple-pod-yaml.png" title="Result in Word with simple YAML">
+</p>
