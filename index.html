@@ -98,6 +98,18 @@
         transform: scale(1.05); /* Slightly increase size on hover */
         box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
       }
+      .options {
+        display: flex;
+        justify-content: space-evenly;
+        margin-top: 1rem;
+      }
+      .options > div {
+        display: flex;
+        align-items: flex-end;
+      }
+      .options input {
+        margin-right: 0.5rem;
+      }
     </style>
   </head>
   <body>
@@ -124,19 +136,44 @@
     </div>
     <textarea id="inputText" placeholder="Enter your code here..."></textarea>
     <button class="fancy-button" onclick="copyText()">Copy</button>
+    <div class="options">
+      <div>
+        <input
+          type="checkbox"
+          id="lineNumbers"
+          name="lineNumbers"
+          value="lineNumbers"
+          checked
+        /><label for="lineNumbers">Add Line Numbers</label>
+      </div>
+      <div>
+        <input
+          type="checkbox"
+          id="highlightCode"
+          name="highlightCode"
+          value="highlightCode"
+          checked
+        /><label for="highlightCode">Highlight Code</label>
+      </div>
+    </div>
 
     <h2>Output:</h2>
     <pre id="output"></pre>
 
     <script>
       function copyText() {
-        const inputText = hljs.highlightAuto(
-          document.getElementById("inputText").value
-        ).value; // Get the value of the textarea and highlight the code
+        const withLineNumbers = document.getElementById("lineNumbers").checked;
+        const withHighlight = document.getElementById("highlightCode").checked;
+        const inputText = withHighlight
+          ? hljs.highlightAuto(document.getElementById("inputText").value).value // Get the value of the textarea and highlight the code
+          : document.getElementById("inputText").value;
         const outputPre = document.getElementById("output");
         const lines = inputText
           .split("\n")
           .map((line, index) => {
+            if (!withLineNumbers) {
+              return `<div class="line">${line}</div>`;
+            }
             const lineNumber = index + 1;
             const maxDigitLineNumber = String(
               inputText.split("\n").length
