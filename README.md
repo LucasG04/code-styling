@@ -1,5 +1,7 @@
 # easy-code-copy
 
+Hosted on GitHub Pages: https://lucasg04.github.io/easy-code-copy/
+
 ## How to use
 
 1. Format your code using any other formatter
