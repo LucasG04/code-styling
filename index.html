@@ -137,7 +137,14 @@
         const lines = inputText
           .split("\n")
           .map((line, index) => {
-            return `<div class="line">${index + 1} ${line}</div>`; // Add line numbers and wrap each line in a div
+            const lineNumber = index + 1;
+            const maxDigitLineNumber = String(
+              inputText.split("\n").length
+            ).length;
+            const padding = " ".repeat(
+              maxDigitLineNumber - String(lineNumber).length
+            ); // Calculate padding based on line number length
+            return `<div class="line">${padding + lineNumber} ${line}</div>`;
           })
           .join("");
         outputPre.innerHTML = lines; // Set the innerHTML to display the formatted lines
