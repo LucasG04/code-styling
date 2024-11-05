@@ -1,0 +1,100 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 20px;
+  display: flex;
+  flex-direction: column;
+}
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.icon-container {
+  display: inline-block; /* Allows for alignment and spacing */
+  text-decoration: none; /* Remove underline from link */
+  vertical-align: middle;
+}
+.github-icon {
+  width: 35px;
+  height: auto;
+  transition: transform 0.2s; /* Smooth transition for hover effect */
+}
+.github-icon:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+}
+textarea {
+  height: 200px;
+  margin-bottom: 20px;
+  font-family: monospace;
+  white-space: pre; /* Maintain whitespace */
+}
+pre {
+  background-color: #f0f0f0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  overflow: auto; /* Adds scrolling if necessary */
+}
+.line {
+  padding: 2px 5px; /* Slight padding for better readability */
+}
+.line:nth-child(odd) {
+  background-color: white; /* Background color for odd lines */
+}
+.line:nth-child(even) {
+  background-color: #f9f9f9; /* Background color for even lines (very light gray) */
+}
+/* Fancy button styles */
+.fancy-button {
+  width: 200px;
+  align-self: center;
+  padding: 15px 30px;
+  font-size: 18px;
+  font-weight: bold;
+  color: black;
+  background-image: linear-gradient(
+    45deg,
+    #ff6b6b,
+    #f7c0c0,
+    #ffcc6b,
+    #ff6b6b
+  ); /* Colorful gradient */
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease; /* Smooth transition for effects */
+  outline: none; /* Removes the default outline */
+  position: relative;
+  overflow: hidden; /* For ripple effect */
+}
+.fancy-button::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 300%;
+  height: 300%;
+  background: rgba(255, 255, 255, 0.3);
+  border-radius: 5px;
+  transform: translate(-50%, -50%) scale(0);
+  transition: transform 0.6s ease; /* Ripple effect transition */
+}
+.fancy-button:hover::before {
+  transform: translate(-50%, -50%) scale(1); /* Ripple effect on hover */
+}
+.fancy-button:hover {
+  transform: scale(1.05); /* Slightly increase size on hover */
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3); /* More pronounced shadow */
+}
+.options {
+  display: flex;
+  justify-content: space-evenly;
+  margin-top: 1rem;
+}
+.options > div {
+  display: flex;
+  align-items: flex-end;
+}
+.options input {
+  margin-right: 0.5rem;
+}
