@@ -1,8 +1,29 @@
+function generateSelectOptions() {
+    const select = document.getElementById('languageSelect');
+    select.innerHTML = '';
+
+    const option = document.createElement('option');
+    option.value = 'auto';
+    option.textContent = 'auto';
+    select.appendChild(option);
+    hljs.listLanguages().forEach(language => {
+        const option = document.createElement('option');
+        option.value = language;
+        option.textContent = language;
+        select.appendChild(option);
+    });
+    document.getElementById("languageSelect").value = 'auto';
+}
+generateSelectOptions();
+
 function copyText() {
     const withLineNumbers = document.getElementById("lineNumbers").checked;
     const withHighlight = document.getElementById("highlightCode").checked;
+    const selectedLanguage = document.getElementById("languageSelect").value;
     const inputText = withHighlight
-        ? hljs.highlightAuto(document.getElementById("inputText").value).value // Get the value of the textarea and highlight the code
+        ? selectedLanguage == 'auto'
+            ? hljs.highlightAuto(document.getElementById("inputText").value).value
+            : hljs.highlight(document.getElementById("inputText").value, { language: selectedLanguage }).value
         : document.getElementById("inputText").value;
     const outputPre = document.getElementById("output");
     const lines = inputText

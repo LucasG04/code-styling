@@ -98,3 +98,6 @@ pre {
 .options input {
   margin-right: 0.5rem;
 }
+.options #languageSelect {
+  margin-left: 0.5rem;
+}

@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Copy Code to Pre-Tag</title>
+    <title>Code Styling</title>
     <link rel="stylesheet" href="styles.css" />
     <link
       rel="stylesheet"
@@ -14,7 +14,7 @@
   </head>
   <body>
     <div class="header">
-      <h1>Copy Code to Pre-Tag</h1>
+      <h1>Simple Code Styling</h1>
       <a
         class="icon-container"
         href="https://github.com/LucasG04/easy-code-copy"
@@ -28,7 +28,7 @@
       </a>
     </div>
     <textarea id="inputText" placeholder="Enter your code here..."></textarea>
-    <button class="fancy-button" onclick="copyText()">Copy</button>
+    <button class="fancy-button" onclick="copyText()">Style</button>
     <div class="options">
       <div>
         <input
@@ -40,13 +40,18 @@
         /><label for="lineNumbers">Add Line Numbers</label>
       </div>
       <div>
-        <input
-          type="checkbox"
-          id="highlightCode"
-          name="highlightCode"
-          value="highlightCode"
-          checked
-        /><label for="highlightCode">Highlight Code</label>
+        <div>
+          <input
+            type="checkbox"
+            id="highlightCode"
+            name="highlightCode"
+            value="highlightCode"
+            checked
+          /><label for="highlightCode">Highlight Code</label>
+        </div>
+        <select id="languageSelect">
+          <!-- Options will be generated dynamically -->
+        </select>
       </div>
     </div>
 
