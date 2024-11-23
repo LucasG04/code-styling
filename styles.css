@@ -93,7 +93,7 @@ pre {
 }
 .options > div {
   display: flex;
-  align-items: flex-end;
+  align-items: center;
 }
 .options input {
   margin-right: 0.5rem;
