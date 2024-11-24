@@ -88,16 +88,26 @@ pre {
 }
 .options {
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-evenly;
+  row-gap: 0.5rem;
   margin-top: 1rem;
 }
-.options > div {
+.options > .group {
+  display: flex;
+  align-items: center;
+  column-gap: 0.5rem;
+}
+.options > .group > .input-wrapper {
   display: flex;
   align-items: center;
 }
-.options input {
+.options input[type=checkbox] {
   margin-right: 0.5rem;
 }
-.options #languageSelect {
+/* .options #languageSelect {
   margin-left: 0.5rem;
-}
+}*/
+input#startingLine {
+  width: 2rem;
+} 

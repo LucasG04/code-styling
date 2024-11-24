@@ -26,13 +26,14 @@ function copyText() {
             : hljs.highlight(document.getElementById("inputText").value, { language: selectedLanguage }).value
         : document.getElementById("inputText").value;
     const outputPre = document.getElementById("output");
+    const startingLineNumber = +document.getElementById("startingLine").value ?? 1;
     const lines = inputText
         .split("\n")
         .map((line, index) => {
             if (!withLineNumbers) {
                 return `<div class="line">${line}</div>`;
             }
-            const lineNumber = index + 1;
+            const lineNumber = startingLineNumber + index;
             const maxDigitLineNumber = String(
                 inputText.split("\n").length
             ).length;

@@ -30,17 +30,31 @@
     <textarea id="inputText" placeholder="Enter your code here..."></textarea>
     <button class="fancy-button" onclick="copyText()">Style</button>
     <div class="options">
-      <div>
-        <input
-          type="checkbox"
-          id="lineNumbers"
-          name="lineNumbers"
-          value="lineNumbers"
-          checked
-        /><label for="lineNumbers">Add Line Numbers</label>
+      <div class="group">
+        <div class="input-wrapper">
+          <input
+            type="checkbox"
+            id="lineNumbers"
+            name="lineNumbers"
+            value="lineNumbers"
+            checked
+          /><label for="lineNumbers">Add Line Numbers</label>
+        </div>
+        &#x2022;
+        <div class="input-wrapper">
+          <label for="startingLine">Start:</label>
+          &nbsp;
+          <input
+            type="number"
+            id="startingLine"
+            name="startingLine"
+            value="1"
+            min="1"
+          />
+        </div>
       </div>
-      <div>
-        <div>
+      <div class="group">
+        <div class="input-wrapper">
           <input
             type="checkbox"
             id="highlightCode"
@@ -49,7 +63,7 @@
             checked
           /><label for="highlightCode">Highlight Code</label>
         </div>
-        <select id="languageSelect">
+        <select id="languageSelect" class="input-wrapper">
           <!-- Options will be generated dynamically -->
         </select>
       </div>
