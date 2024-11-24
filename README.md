@@ -1,6 +1,6 @@
-# easy-code-copy
+# code-styling
 
-Hosted on GitHub Pages: https://lucasg04.github.io/easy-code-copy/
+Hosted on GitHub Pages: https://lucasg04.github.io/code-styling/
 
 ## How to use
 
